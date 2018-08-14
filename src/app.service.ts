@@ -1,4 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { AuthService } from 'auth.service';
+import { User } from 'users.service';
+import { log } from 'util';
 
 export interface SimpleMessage {
   message: string;
@@ -6,6 +9,11 @@ export interface SimpleMessage {
 
 @Injectable()
 export class AppService {
+  constructor(private readonly authService: AuthService) {
+
+  }
+
+
   welcomeMessage: SimpleMessage = {
     message: 'Hello David!',
   };
@@ -16,5 +24,9 @@ export class AppService {
   setWelcomeMessage(message: string) {
     this.welcomeMessage.message = message;
     return this.welcomeMessage;
+  }
+
+  getJwtToken(user: User): Promise<any> {
+    return this.authService.createToken(user);
   }
 }
