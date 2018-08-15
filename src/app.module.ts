@@ -10,4 +10,5 @@ import { JwtStrategyService } from 'jwt-strategy.service';
   controllers: [AppController],
   providers: [AppService, AuthService, UsersService, JwtStrategyService],
 })
-export class AppModule { }
+export class AppModule {
+}

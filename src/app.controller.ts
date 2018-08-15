@@ -1,13 +1,13 @@
-import { Get, Controller, Response, HttpCode, Req, Post, Body, Header, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Header, HttpCode, Post, UseGuards } from '@nestjs/common';
 import { AppService, SimpleMessage } from './app.service';
-import { log } from 'util';
-import { of, Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AuthGuard } from '@nestjs/passport';
 import { User } from 'users.service';
 
 @Controller('api')
 export class AppController {
-  constructor(private readonly appService: AppService) { }
+  constructor(private readonly appService: AppService) {
+  }
 
   @Get()
   welcomeRequest(): Observable<SimpleMessage> {

@@ -18,8 +18,10 @@ describe('AppController', () => {
       const expectedResponse: SimpleMessage = {
         message: 'Hello David!',
       };
-      appController.welcomeRequest().toPromise()
+      appController
+        .welcomeRequest()
+        .toPromise()
         .then(res => expect(res).toEqual(expectedResponse));
+    });
   });
-});
 });

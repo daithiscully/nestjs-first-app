@@ -1,0 +1,6 @@
+
+Todo:
+  ✔ Add Authentication using JWTs @done(18-08-15 10:07)
+  ☐ Implement TypeORM
+  ☐ Fetch user from DB for authentication (use TypeORM)
+  ☐ Add OpenAPI/Swagger
